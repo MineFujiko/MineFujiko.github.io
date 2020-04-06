@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-04-06T13:29:37.644Z</updated>
+  <updated>2020-04-06T14:56:30.005Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>20200406-创建自定义结构体</title>
+    <link href="http://yoursite.com/2020/04/06/20200406-1/"/>
+    <id>http://yoursite.com/2020/04/06/20200406-1/</id>
+    <published>2020-04-06T14:53:50.000Z</published>
+    <updated>2020-04-06T14:56:30.005Z</updated>
+    
+    <content type="html"><![CDATA[<p>最近，从verilog切到SystemVerilog，发现SV更加灵活、方便。刚开始接触，还有很多不熟悉的地方。</p><p>结构体，可以将若干个变量组合到一起。</p><h3 id="常见用法"><a href="#常见用法" class="headerlink" title="常见用法"></a>常见用法</h3><p>定义一个报文头。可以单独用一个文件进行存放结构体。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">typedef struct packed&#123;</span><br><span class="line">    logic [63:48] sport;      &#x2F;&#x2F;源端口号</span><br><span class="line">    logic [47:32] dport;      &#x2F;&#x2F;目的端口号</span><br><span class="line">    logic [31:16] udp_length; &#x2F;&#x2F;UDP长度，包括UDP头和数据</span><br><span class="line">    logic [15:0]  checksum;   &#x2F;&#x2F;校验和</span><br><span class="line">&#125; UDP_HEADER;                 &#x2F;&#x2F;共8Byte</span><br></pre></td></tr></table></figure><h3 id="声明"><a href="#声明" class="headerlink" title="声明"></a>声明</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">UDP_HEADER S_udp_header;</span><br></pre></td></tr></table></figure><h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">assign S_udp_header.dport &#x3D; &#39;d320;</span><br></pre></td></tr></table></figure><p>由于结构体只是一个数据的集合，所以它是可以综合的。</p><h3 id="合并结构"><a href="#合并结构" class="headerlink" title="合并结构"></a>合并结构</h3><p>为什么要使用合并结构？<br>合并结构是以连续比特集的方式存放的，中间没有闲置的空间。所以，当希望减少存储器的使用量或者存储器的部分位代表了数值时，可以使用合并结构。<br>使用时，需要考虑结构的使用方式和元素的对齐方式。</p><ul><li>如果对结构的操作很频繁，例如：需要经常对整个结构体进行复制，使用合并结构效率更高。如果对结构体中个体操作频繁，则使用非合并结构效率更高。</li><li>字节是否对齐也影响效率。<br>这些都是针对<strong>仿真</strong>而言的。</li></ul><hr><blockquote><p>1.&lt;&lt;SystemVerilog 验证测试平台编写指南&gt;&gt; [美] 克里斯 斯皮尔 著. （Pg39-42)</p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;最近，从verilog切到SystemVerilog，发现SV更加灵活、方便。刚开始接触，还有很多不熟悉的地方。&lt;/p&gt;
+&lt;p&gt;结构体，可以将若干个变量组合到一起。&lt;/p&gt;
+&lt;h3 id=&quot;常见用法&quot;&gt;&lt;a href=&quot;#常见用法&quot; class=&quot;headerlink&quot; t
+      
+    
+    </summary>
+    
+    
+      <category term="FPGA" scheme="http://yoursite.com/categories/FPGA/"/>
+    
+    
+      <category term="systemverilog,每日一学" scheme="http://yoursite.com/tags/systemverilog-%E6%AF%8F%E6%97%A5%E4%B8%80%E5%AD%A6/"/>
+    
+  </entry>
   
   <entry>
     <title>FPGA之路——Verilog与编辑器的那些事儿</title>
