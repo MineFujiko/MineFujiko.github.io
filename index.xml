@@ -1,16 +1,16 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>NIC&#39;s Blog</title>
-        <link>https://nic.github.io/</link>
+        <link>https://minefujiko.github.io/</link>
         <description>NIC&#39;s Blog</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Mon, 11 Oct 2021 23:18:22 &#43;0800</lastBuildDate>
-            <atom:link href="https://nic.github.io/index.xml" rel="self" type="application/rss+xml" />
+            <atom:link href="https://minefujiko.github.io/index.xml" rel="self" type="application/rss+xml" />
         <item>
     <title>FPGA之路-Verilog与编辑器的那些儿</title>
-    <link>https://nic.github.io/posts/first_post/</link>
+    <link>https://minefujiko.github.io/posts/first_post/</link>
     <pubDate>Mon, 11 Oct 2021 23:18:22 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>https://nic.github.io/posts/first_post/</guid>
+    <guid>https://minefujiko.github.io/posts/first_post/</guid>
     <description><![CDATA[Verilog HDL，硬件描述语言的一种，以文本形式描述数字系统硬件的结构和行为的语言[1]。Verilog HDL和VHDL是世界上最流行的两种硬件描述]]></description>
 </item></channel>
 </rss>
