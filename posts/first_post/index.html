@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>FPGA之路-Verilog与编辑器的那些儿 - NIC&#39;s Blog</title><meta name="Description" content=""><meta property="og:title" content="FPGA之路-Verilog与编辑器的那些儿" />
+<meta property="og:description" content="Verilog HDL，硬件描述语言的一种，以文本形式描述数字系统硬件的结构和行为的语言[1]。Verilog HDL和VHDL是世界上最流行的两种硬件描述" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://nic.github.io/posts/first_post/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-10-11T23:18:22+08:00" />
+<meta property="article:modified_time" content="2021-10-11T23:18:22+08:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="FPGA之路-Verilog与编辑器的那些儿"/>
+<meta name="twitter:description" content="Verilog HDL，硬件描述语言的一种，以文本形式描述数字系统硬件的结构和行为的语言[1]。Verilog HDL和VHDL是世界上最流行的两种硬件描述"/>
+<meta name="application-name" content="NIC&#39;s Blog">
+<meta name="apple-mobile-web-app-title" content="NIC&#39;s Blog"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://nic.github.io/posts/first_post/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "FPGA之路-Verilog与编辑器的那些儿",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/nic.github.io\/posts\/first_post\/"
+        },"genre": "posts","wordcount":  2428 ,
+        "url": "https:\/\/nic.github.io\/posts\/first_post\/","datePublished": "2021-10-11T23:18:22+08:00","dateModified": "2021-10-11T23:18:22+08:00","publisher": {
+            "@type": "Organization",
+            "name": "作者"},"author": {
+                "@type": "Person",
+                "name": "作者"
+            },"description": ""
+    }
+    </script></head>
+    <body header-desktop="" header-mobile=""><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : '' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="NIC&#39;s Blog">NIC&#39;s Blog</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="NIC&#39;s Blog">NIC&#39;s Blog</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">FPGA之路-Verilog与编辑器的那些儿</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>作者</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-10-11">2021-10-11</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 2428 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 5 分钟&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#1verilog与notepad">1.Verilog与Notepad++</a></li>
+    <li><a href="#2verilog与sublime-text3">2.Verilog与Sublime Text3</a></li>
+    <li><a href="#3verilog与vs-code">3.Verilog与VS Code</a></li>
+    <li><a href="#4verilog与vim">4.Verilog与Vim</a></li>
+    <li><a href="#5重拾旧爱notepad">5.重拾旧爱Notepad++</a></li>
+    <li><a href="#6打造专属的编辑器">6.打造专属的编辑器</a></li>
+    <li><a href="#7历经磨难终得利器">7.历经磨难“终得利器</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p>Verilog HDL，硬件描述语言的一种，以文本形式描述数字系统硬件的结构和行为的语言<!-- raw HTML omitted -->[1]<!-- raw HTML omitted -->。Verilog HDL和VHDL是世界上最流行的两种硬件描述语言。在硬件描述语言中是很流行，但在所有编程语言中，其长期在100名左右徘徊，在<a href="https://www.tiobe.com/tiobe-index/" target="_blank" rel="noopener noreffer">TIOBE 2019年2月的排行榜</a>中甚至跌出了前100名，足见其有多小众。
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="20190227235636723_27835.png"
+        data-srcset="20190227235636723_27835.png, 20190227235636723_27835.png 1.5x, 20190227235636723_27835.png 2x"
+        data-sizes="auto"
+        alt="20190227235636723_27835.png"
+        title="Verilog" /></p>
+<hr>
+<h2 id="1verilog与notepad">1.Verilog与Notepad++</h2>
+<p>17年大学毕业后，从事FPGA开发相关工作，进入公司后，大家都用<a href="https://notepad-plus-plus.org/" target="_blank" rel="noopener noreffer">Notepad++</a>，于是我也顺理成章的用上了Notepad++。Notepad++特别适合于Verilog的代码编写工作，因为Verilog不像其他编程语言，需要频繁的编译与调试，而且，一般Verilog的代码量不是特别大。前三个月，我用得很爽，但慢慢地，问题就来了。Notepad++除了支持Verilog语法高亮，除此之外只有基本的编辑功能。还是那句老话，磨刀不误砍柴工。不满足于现状的我，还是在因特内特上“疯狂”的寻找Notepad++与Verilog相关的插件，最终的结果不出意料的一无所获。
+在这里，我仔细思考了一下，Verilog相关的插件为何如此之少的原因？主要有一下三点：</p>
+<ul>
+<li>使用Verilog这种语言的人很少，无论是FPGA开发还是芯片设计的从业人员，相比于互联网的程序员的数量，完全不在一个数量级上；</li>
+<li>FPGA工程师号称“硬件工程师中的软件工程师”，在国内从事FPGA开发的技术人员绝大多数都是硬件出身，很少有软件出身的。插件编写需要很专业的软件功底，所以，这就尴尬了，会写插件的人不会去用Verilog，而会Verilog的人又都不会插件，同时，写Verilog的人很难有开源的思想；</li>
+<li>国外的情况不清楚，但无论哪一种编程语言，国内对插件开发这类的事情似乎并不太“热衷”；</li>
+</ul>
+<p>在插件寻找之路上，我意外的发现Sublime Text3在这一方面明显强于Notepad++。</p>
+<p><em>2019年2月28日写到这里，2020年4月4日才接上&ndash;！</em></p>
+<hr>
+<h2 id="2verilog与sublime-text3">2.Verilog与Sublime Text3</h2>
+<p>由于Notepad++对Verilog的支持实在太差，我转而使用<a href="https://sublimetextcn.com/" target="_blank" rel="noopener noreffer">Sublime Text3</a>进行Code。Sublime Text3支持Verilog的插件明显比Notepad++多很多，17年底时开始在网上疯狂地搜索与Verilog相关的插件。这些插件都很强大和使用，具体可以参照以下的文章：</p>
+<blockquote>
+<p>1.<a href="https://blog.csdn.net/lx520aa/article/details/77848422" target="_blank" rel="noopener noreffer">sublime3添加verilog自动补全代码段</a>
+2.<a href="https://blog.csdn.net/lijing198997/article/details/47724749" target="_blank" rel="noopener noreffer">sublime text 3在windows中配置ctags插件</a>
+3.<a href="https://blog.csdn.net/k331922164/article/details/48092291" target="_blank" rel="noopener noreffer">使用模板加快编码效率（三）——sublime [更新]</a>
+4.<a href="http://quqian110.github.io/pages/2014107/04/sublime_text_2_and_verilog.html" target="_blank" rel="noopener noreffer">Sublime Text 2 和 Verilog HDL</a>
+5.<a href="https://blog.csdn.net/David_xtd/article/details/46373419" target="_blank" rel="noopener noreffer">引用4的原创网页已经打不开了，这是备用链接</a>
+6.<a href="https://www.cnblogs.com/hqz68/p/9825785.html" target="_blank" rel="noopener noreffer">sublime text3 verilog代码编写高级操作篇</a></p>
+</blockquote>
+<p>本以为可以和Sublime Text3一起孤独终老了，用了1个多月后，发现Sublime Text3相比于Notepad++依旧略显“笨重”。同时，各种插件有很多地方并不是完全适合我。由于笔者的前公司有各种编码规范，许多自动化的功能，还需要手动进行二次修改，这样似乎并不能带来太多的便捷。有时候还不如复制粘贴来得快。于是，就这样还是和Sublime Text3和平分手了。</p>
+<p><em>近期看同事使用Sublime Text3，发现Sublime Text3编辑器有Python的API，那么只要掌握一点Pyhton的知识，就可以自己制作专属于自己的插件了。用Python去制作插件，学些成本相当较低。</em></p>
+<hr>
+<h2 id="3verilog与vs-code">3.Verilog与VS Code</h2>
+<p><a href="https://code.visualstudio.com/" target="_blank" rel="noopener noreffer">VS Code</a> 是15年发布的，我第一次接触大概是16年的时候，不由的想起那个时候我还在画CAD &ndash;！。17年差不多偶尔使用VS Code写点Markdown，18年写Python。但时至2020年3月之前，我从未用VS Code进行过Verilog的Code。原因主要在于，17年接触VS Code时，那时VS Code商店里与verilog/systemverilog相关插件的数量用一只手就可以数过来（欲哭无泪），同时很多功能不够完善，网上更加找不到相关的帖子。但那时，我就知道有一天VS Code会变得足够强大。等到那个时候，我会选择使用VS Code的。我于2020年4月3日切到VS Code上进行Code。此至今日（2020年4月4日），VS Code上的HDL语言相关的插件已经很强大了。
+<em>后续，我会写一些关于VS CODE的Verilog环境搭建的教程</em></p>
+<hr>
+<h2 id="4verilog与vim">4.Verilog与Vim</h2>
+<p><a href="https://www.vim.org/" target="_blank" rel="noopener noreffer">Vim</a>又是一个小插曲，前同事中有VIM大佬，看大佬用VIM写verilog，简直出神入化。我于2018年4月12日在JD购得一本《Vim使用技巧（第2版）》[英] Drew Neil著。不到3周，我便放弃了。。。
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="_v_images/20200404152146872_17174.png"
+        data-srcset="_v_images/20200404152146872_17174.png, _v_images/20200404152146872_17174.png 1.5x, _v_images/20200404152146872_17174.png 2x"
+        data-sizes="auto"
+        alt="_v_images/20200404152146872_17174.png"
+        title="VIM" /></p>
+<hr>
+<h2 id="5重拾旧爱notepad">5.重拾旧爱Notepad++</h2>
+<p>最终选用Notepad++，其一是因为轻量化。但是，我也发现当Notepad++在工作区打开太多文件夹时，也会存在各种卡顿的问题。</p>
+<p>其二，是因为我找到了Notepad++的Python接口。可以通过Python脚本进行各种定制化操作，达到和插件一样的效果，用起来也很爽。
+目前，我实现了自己定制的自动端口例化和自动声明，具体使用方法可以参考我的Github库：<a href="https://github.com/MineFujiko/Notepad_plugins_for_verilog" target="_blank" rel="noopener noreffer">Notepad_plugins_for_verilog</a>。（由于很多插件是在公司写的，前公司的东西都带不出来，后续写插件一定要在家里进行。&ndash;！）</p>
+<hr>
+<h2 id="6打造专属的编辑器">6.打造专属的编辑器</h2>
+<p>待更新。。。
+使用VS code的原因：</p>
+<ul>
+<li>跨平台</li>
+<li>趋势</li>
+<li>版本控制，对于GIT的支持</li>
+</ul>
+<hr>
+<h2 id="7历经磨难终得利器">7.历经磨难“终得利器</h2>
+<hr>
+<blockquote>
+<p>1.Verilog HDL之百度百科：<a href="https://baike.baidu.com/item/Verilog%20HDL/596353?fr=aladdin" target="_blank" rel="noopener noreffer">https://baike.baidu.com/item/Verilog%20HDL/596353?fr=aladdin</a>
+2.VIM：<a href="https://www.vim.org/" target="_blank" rel="noopener noreffer">https://www.vim.org/</a>
+3.Python Script：<a href="https://github.com/bruderstein/PythonScript/releases" target="_blank" rel="noopener noreffer">https://github.com/bruderstein/PythonScript/releases</a>
+4.Notepad++ Python Script下载链接：<a href="http://npppythonscript.sourceforge.net/" target="_blank" rel="noopener noreffer">http://npppythonscript.sourceforge.net/</a></p>
+</blockquote>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2021-10-11</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.88.1">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank"></a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>
