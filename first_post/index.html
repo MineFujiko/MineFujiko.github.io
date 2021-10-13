@@ -29,7 +29,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/minefujiko.github.io\/first_post\/"
-        },"image": ["https:\/\/minefujiko.github.io\/images\/Apple-Devices-Preview.png"],"genre": "posts","wordcount":  2428 ,
+        },"image": ["https:\/\/minefujiko.github.io\/images\/Apple-Devices-Preview.png"],"genre": "posts","wordcount":  2430 ,
         "url": "https:\/\/minefujiko.github.io\/first_post\/","datePublished": "2021-10-11T23:18:22+08:00","dateModified": "2021-10-11T23:18:22+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
             "@type": "Organization",
             "name": "xxxx","logo": "https:\/\/minefujiko.github.io\/images\/avatar.png"},"author": {
@@ -43,7 +43,7 @@
         <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
     <div class="header-wrapper">
         <div class="header-title">
-            <a href="/" title="NIC&#39;s Blog"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw'></i></span>LoveIt</a>
+            <a href="/" title="NIC&#39;s Blog">NIC&#39;s blog</a>
         </div>
         <div class="menu">
             <div class="menu-inner"><a class="menu-item" href="/posts/"> 所有文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/categories/documentation/"> 文档 </a><a class="menu-item" href="/about/"> 关于 </a><a class="menu-item" href="https://github.com/dillonzq/LoveIt" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item language" title="选择语言">简体中文<i class="fas fa-chevron-right fa-fw"></i>
@@ -69,7 +69,7 @@
     <div class="header-container">
         <div class="header-wrapper">
             <div class="header-title">
-                <a href="/" title="NIC&#39;s Blog"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw'></i></span>LoveIt</a>
+                <a href="/" title="NIC&#39;s Blog">NIC&#39;s blog</a>
             </div>
             <div class="menu-toggle" id="menu-toggle-mobile">
                 <span></span><span></span><span></span>
@@ -110,7 +110,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">FPGA之路-Verilog与编辑器的那些儿</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Nic</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-10-11">2021-10-11</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 2428 字&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-10-11">2021-10-11</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 2430 字&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 5 分钟&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
@@ -129,14 +129,11 @@
   </ul>
 </nav></div>
             </div><div class="content" id="content"><p>Verilog HDL，硬件描述语言的一种，以文本形式描述数字系统硬件的结构和行为的语言<sup>[1]</sup>。Verilog HDL和VHDL是世界上最流行的两种硬件描述语言。在硬件描述语言中是很流行，但在所有编程语言中，其长期在100名左右徘徊，在<a href="https://www.tiobe.com/tiobe-index/" target="_blank" rel="noopener noreffer">TIOBE 2019年2月的排行榜</a>中甚至跌出了前100名，足见其有多小众。
-<img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="20190227235636723_27835.png"
-        data-srcset="20190227235636723_27835.png, 20190227235636723_27835.png 1.5x, 20190227235636723_27835.png 2x"
-        data-sizes="auto"
-        alt="20190227235636723_27835.png"
-        title="Verilog" /></p>
+<figure><img src="/images/20211014/20190227235636723_27835.png"/><figcaption>
+            <h4>Lighthouse (figure)</h4>
+        </figcaption>
+</figure>
+</p>
 <hr>
 <h2 id="1verilog与notepad">1.Verilog与Notepad++</h2>
 <p>17年大学毕业后，从事FPGA开发相关工作，进入公司后，大家都用<a href="https://notepad-plus-plus.org/" target="_blank" rel="noopener noreffer">Notepad++</a>，于是我也顺理成章的用上了Notepad++。Notepad++特别适合于Verilog的代码编写工作，因为Verilog不像其他编程语言，需要频繁的编译与调试，而且，一般Verilog的代码量不是特别大。前三个月，我用得很爽，但慢慢地，问题就来了。Notepad++除了支持Verilog语法高亮，除此之外只有基本的编辑功能。还是那句老话，磨刀不误砍柴工。不满足于现状的我，还是在因特内特上“疯狂”的寻找Notepad++与Verilog相关的插件，最终的结果不出意料的一无所获。
@@ -229,11 +226,7 @@
 <div id="comments"><div id="utterances"></div><noscript>
                 Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/">Utterances</a>.
             </noscript></div></article></div>
-            </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.88.1">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
-                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">xxxx</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
-        </div>
-    </footer></div>
+            </main></div>
 
         <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
                 <i class="fas fa-arrow-up fa-fw"></i>

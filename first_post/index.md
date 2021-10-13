@@ -3,7 +3,8 @@
 
 
 Verilog HDL，硬件描述语言的一种，以文本形式描述数字系统硬件的结构和行为的语言<sup>[1]</sup>。Verilog HDL和VHDL是世界上最流行的两种硬件描述语言。在硬件描述语言中是很流行，但在所有编程语言中，其长期在100名左右徘徊，在[TIOBE 2019年2月的排行榜](https://www.tiobe.com/tiobe-index/)中甚至跌出了前100名，足见其有多小众。
-![Verilog](20190227235636723_27835.png)
+{{< figure src="/images/20211014/20190227235636723_27835.png" title="Lighthouse (figure)" >}}
+
 
 ---
 ##  1.Verilog与Notepad++ 
