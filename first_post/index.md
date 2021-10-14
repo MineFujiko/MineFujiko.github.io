@@ -19,6 +19,15 @@ Verilog HDL，硬件描述语言的一种，以文本形式描述数字系统硬
 在插件寻找之路上，我意外的发现Sublime Text3在这一方面明显强于Notepad++。
 
 *2019年2月28日写到这里，2020年4月4日才接上--！*
+{{< admonition type=tip title="tip" open=false >}}
+2019年2月28日写到这里，2020年4月4日才接上--！
+{{< /admonition >}}
+
+{{< mapbox 121.485 31.233 12 >}}
+
+{{< mapbox 121.485 31.233 12 true "mapbox://styles/mapbox/streets-zh-v1" >}}
+
+{{< bilibili BV1E34y1D7T3 >}}
 
 ---
 ##  2.Verilog与Sublime Text3
