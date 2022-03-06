@@ -3,7 +3,14 @@
         <title>所有文章 - NIC&#39;s Blog</title>
         <link>https://minefujiko.github.io/posts/</link>
         <description>所有文章 | NIC&#39;s Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Mon, 28 Feb 2022 00:20:22 &#43;0800</lastBuildDate><atom:link href="https://minefujiko.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sat, 05 Mar 2022 23:56:05 &#43;0800</lastBuildDate><atom:link href="https://minefujiko.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>org-mode-标题自动编号</title>
+    <link>https://minefujiko.github.io/16_6_%E5%8A%A8%E6%80%81%E6%A0%87%E9%A2%98%E7%BC%96%E5%8F%B7/</link>
+    <pubDate>Sat, 05 Mar 2022 23:56:05 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://minefujiko.github.io/16_6_%E5%8A%A8%E6%80%81%E6%A0%87%E9%A2%98%E7%BC%96%E5%8F%B7/</guid>
+    <description><![CDATA[动态标题编号 ORG的标题默认是不带编号的，如图1所示。 fig1-不带编号的ORG标题 注意：1. 图片插入时，目录中不能有空格，不能有.等特殊字]]></description>
+</item><item>
     <title>VSCODE使用技巧</title>
     <link>https://minefujiko.github.io/20220228_01/</link>
     <pubDate>Mon, 28 Feb 2022 00:20:22 &#43;0800</pubDate>
@@ -24,12 +31,5 @@
     <author>作者</author>
     <guid>https://minefujiko.github.io/first_post/</guid>
     <description><![CDATA[Verilog HDL，硬件描述语言的一种，以文本形式描述数字系统硬件的结构和行为的语言[1]。Verilog HDL和VHDL是世界上最流行的两种硬件描述]]></description>
-</item><item>
-    <title>org-mode-标题自动编号</title>
-    <link>https://minefujiko.github.io/16_6_%E5%8A%A8%E6%80%81%E6%A0%87%E9%A2%98%E7%BC%96%E5%8F%B7/</link>
-    <pubDate>Mon, 01 Jan 0001 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
-    <guid>https://minefujiko.github.io/16_6_%E5%8A%A8%E6%80%81%E6%A0%87%E9%A2%98%E7%BC%96%E5%8F%B7/</guid>
-    <description><![CDATA[动态标题编号 ORG的标题默认是不带编号的，如图1所示。 fig1.png 注意：1. 图片插入时，目录中不能有空格，不能有.等特殊字符。 使能自动编号功能 使用命令]]></description>
 </item></channel>
 </rss>

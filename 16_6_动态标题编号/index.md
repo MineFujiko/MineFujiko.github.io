@@ -5,17 +5,17 @@
 ## 动态标题编号 {#动态标题编号}
 
 ORG的标题默认是不带编号的，如图1所示。
-[fig1.png](/ox-hugo/fig1.png)
+{{< figure src="/ox-hugo/fig1.png" title="fig1-不带编号的ORG标题" >}}
 注意：1. 图片插入时，目录中不能有空格，不能有.等特殊字符。
 
 
-### 使能自动编号功能 {#使能自动编号功能}
+### 1 使能自动编号功能 {#使能自动编号功能}
 
 使用命令 _M-x org-num-mode_ ,即可打开动态标题编号。其效果，如图2所示。
-[fig2.png](/ox-hugo/fig2.png)
+{{< figure src="/ox-hugo/fig2.png" title="fig2-带编号的ORG标题" >}}
 
 
-### 更多设置 {#更多设置}
+### 2 更多设置 {#更多设置}
 
 
 #### 限制自动编号功能 {#限制自动编号功能}
@@ -29,9 +29,9 @@ ORG的标题默认是不带编号的，如图1所示。
 -   org-num-skip-footnotes
 
 示例1：设置org-num-max-level 为1, 效果如图3所示。
-[fig3.png](/ox-hugo/fig3.png)
+{{< figure src="/ox-hugo/fig3.png" title="fig3-1级标题带编号" >}}
 设置方式为： C-h v org-num-max-level 修改配置为1，如图4所示。
-[fig4.png](/ox-hugo/fig4.png)
+{{< figure src="/ox-hugo/fig4.png" title="fig4-配置方法" >}}
 
 
 #### 使能全局自动编号功能 {#使能全局自动编号功能}
@@ -40,6 +40,6 @@ ORG的标题默认是不带编号的，如图1所示。
 在当前文件中，使用 _#+startup:num_ 可以在当前文档中使能自动编号功能。
 
 
-### 参考文档 {#参考文档}
+### 3 参考文档 {#参考文档}
 
 > 1.  The Org Manual Release 9.4, 16.6 Dynamic Headline Numbering
