@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>VHDL学习笔记 - NIC&#39;s Blog</title><meta name="Description" content="关于 LoveIt 主题"><meta property="og:title" content="VHDL学习笔记" />
+<meta property="og:description" content="代码结构 VHDL代码，由3个基本部分组成： LIBRARY(库) ENTITY(实体) ARCHITECTURE(构造体) 库 LIBRARY 列出当前设计中所用到" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://minefujiko.github.io/vhdl/" /><meta property="og:image" content="https://minefujiko.github.io/logo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-08-09T00:05:38+08:00" />
+<meta property="article:modified_time" content="2022-08-09T00:05:38+08:00" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://minefujiko.github.io/logo.png"/>
+
+<meta name="twitter:title" content="VHDL学习笔记"/>
+<meta name="twitter:description" content="代码结构 VHDL代码，由3个基本部分组成： LIBRARY(库) ENTITY(实体) ARCHITECTURE(构造体) 库 LIBRARY 列出当前设计中所用到"/>
+<meta name="application-name" content="LoveIt">
+<meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://minefujiko.github.io/vhdl/" /><link rel="prev" href="https://minefujiko.github.io/20220807_vcs/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "VHDL学习笔记",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/minefujiko.github.io\/vhdl\/"
+        },"image": ["https:\/\/minefujiko.github.io\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "VHDL","wordcount":  593 ,
+        "url": "https:\/\/minefujiko.github.io\/vhdl\/","datePublished": "2022-08-09T00:05:38+08:00","dateModified": "2022-08-09T00:05:38+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "xxxx","logo": "https:\/\/minefujiko.github.io\/images\/avatar.png"},"author": {
+                "@type": "Person",
+                "name": "Niechuan"
+            },"description": ""
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="NIC&#39;s Blog">NIC&#39;s blog</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 所有文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/categories/documentation/"> 文档 </a><a class="menu-item" href="/about/"> 关于 </a><a class="menu-item" href="https://github.com/dillonzq/LoveIt" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item language" title="选择语言">简体中文<i class="fas fa-chevron-right fa-fw"></i>
+                        <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/vhdl/" selected>简体中文</option></select>
+                    </a><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="NIC&#39;s Blog">NIC&#39;s blog</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">所有文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/categories/documentation/" title="">文档</a><a class="menu-item" href="/about/" title="">关于</a><a class="menu-item" href="https://github.com/dillonzq/LoveIt" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a><a href="javascript:void(0);" class="menu-item" title="选择语言">简体中文<i class="fas fa-chevron-right fa-fw"></i>
+                    <select class="language-select" onchange="location = this.value;"><option value="/vhdl/" selected>简体中文</option></select>
+                </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">VHDL学习笔记</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Niechuan</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/ic/"><i class="far fa-folder fa-fw"></i>IC</a>&nbsp;<a href="/categories/fpga/"><i class="far fa-folder fa-fw"></i>FPGA</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-08-09">2022-08-09</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 593 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 2 分钟&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+<ul>
+<li><a href="#headline-1">代码结构</a>
+<ul>
+<li><a href="#headline-2">库</a>
+<ul>
+<li><a href="#headline-3">库是如何构建的？</a>
+</li>
+<li><a href="#headline-4">库声明</a>
+<ul>
+<li><a href="#headline-5">ieee库</a>
+</li>
+<li><a href="#headline-6">std库</a>
+</li>
+<li><a href="#headline-7">work库</a>
+</li>
+</ul>
+</li>
+<li><a href="#headline-8">示例</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav></div>
+            </div><div class="content" id="content">
+<div id="outline-container-headline-1" class="outline-2">
+<h2 id="headline-1">
+代码结构
+</h2>
+<div id="outline-text-headline-1" class="outline-text-2">
+<p>VHDL代码，由3个基本部分组成：</p>
+<ul>
+<li>
+<p>LIBRARY(库)</p>
+</li>
+<li>
+<p>ENTITY(实体)</p>
+</li>
+<li>
+<p>ARCHITECTURE(构造体)</p>
+<table>
+<thead>
+</thead>
+<tbody>
+<tr>
+<td>库</td>
+<td>LIBRARY</td>
+<td>列出当前设计中所用到的所有库文件</td>
+</tr>
+<tr>
+<td>实体</td>
+<td>ENTITY</td>
+<td>定义电路的输入/输出引脚</td>
+</tr>
+<tr>
+<td>构造体</td>
+<td>ARCHITECTURE</td>
+<td>描述实现具体电路</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<div id="outline-container-headline-2" class="outline-3">
+<h3 id="headline-2">
+库
+</h3>
+<div id="outline-text-headline-2" class="outline-text-3">
+<p>库，是一些常用代码的集合。将电路设计中经常使用的一些代码存放在库中，有利于设计的复用和代码共享，同时可以使代码结构更加清晰。</p>
+<div id="outline-container-headline-3" class="outline-4">
+<h4 id="headline-3">
+库是如何构建的？
+</h4>
+<div id="outline-text-headline-3" class="outline-text-4">
+<p>代码的标准形式，包括了函数(FUNCTION), 过程(PROCEDURE), 元件(COMPONENT)等。将标准形式的代码打包成在一起，形成包集(PACKAGE)。用户根据需要对其进行编译使用。</p>
+</div>
+</div>
+<div id="outline-container-headline-4" class="outline-4">
+<h4 id="headline-4">
+库声明
+</h4>
+<div id="outline-text-headline-4" class="outline-text-4">
+<p>VHDL中，有3个常用的库：</p>
+<ul>
+<li>
+<p>ieee库</p>
+</li>
+<li>
+<p>std库</p>
+</li>
+<li>
+<p>work库</p>
+</li>
+</ul>
+<div id="outline-container-headline-5" class="outline-5">
+<h5 id="headline-5">
+<span class="todo">TODO</span>
+ieee库
+</h5>
+<div id="outline-text-headline-5" class="outline-text-5">
+<table>
+<thead>
+<tr>
+<th>包集</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>std_logic_1164</td>
+<td>定义了STD_LOGIC(8值)和STD_ULOGIC(9值)多值逻辑系统</td>
+<td></td>
+</tr>
+<tr>
+<td>std_logic_arith</td>
+<td>定义了SIGNED(有符号)和UNSIGNED(无符号)数据类型、相关算术运算、比较运算</td>
+<td>包含了多种数据转换函数</td>
+</tr>
+<tr>
+<td>std_logic_signed</td>
+<td>可以使STD_LOGIC_VECTOR像SIGNED一样进行运算</td>
+<td></td>
+</tr>
+<tr>
+<td>std_logic_unsigned</td>
+<td>可以使STD_LOGIC_VECTOR像UNSIGNED一样进行运算</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>
+<p>std_logic_arith
+常用转化函数：</p>
+<ul>
+<li>
+<p>conv_integer(p)</p>
+</li>
+<li>
+<p>conv_unsigned(p,b)</p>
+</li>
+<li>
+<p>conv_signed(p,b)</p>
+</li>
+<li>
+<p>conv_std_logic_vector(p,b)</p>
+</li>
+</ul>
+</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-headline-6" class="outline-5">
+<h5 id="headline-6">
+std库
+</h5>
+<div id="outline-text-headline-6" class="outline-text-5">
+<p>std库，是VHDL设计环境的标准资源库，包括2个包集：</p>
+<ul>
+<li>
+<p>standard, 数据类型</p>
+</li>
+<li>
+<p>textio, 输入输出文本</p>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-headline-7" class="outline-5">
+<h5 id="headline-7">
+work库
+</h5>
+<div id="outline-text-headline-7" class="outline-text-5">
+<p>work库，为当前工作库，当前设计所有代码都放在work库中</p>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-headline-8" class="outline-4">
+<h4 id="headline-8">
+示例
+</h4>
+<div id="outline-text-headline-8" class="outline-text-4">
+<p>库的声明及使用。</p>
+<div class="src src-vhdl">
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-vhdl" data-lang="vhdl">  <span class="k">library</span> <span class="nn">ieee</span><span class="p">;</span>
+  <span class="k">use</span> <span class="nn">IEEE.STD_LOGIC_1164.</span><span class="k">ALL</span><span class="p">;</span>
+
+  <span class="k">library</span> <span class="nn">std</span><span class="p">;</span>
+  <span class="k">use</span> <span class="nn">std.standard.</span><span class="k">all</span><span class="p">;</span>
+
+  <span class="k">library</span> <span class="nn">work</span><span class="p">;</span>
+  <span class="k">use</span> <span class="nn">work.</span><span class="k">all</span><span class="p">;</span></code></pre></td></tr></table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2022-08-09</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/vhdl/index.md" target="_blank">阅读原始文档</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://minefujiko.github.io/vhdl/" data-title="VHDL学习笔记" data-hashtags="VHDL"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://minefujiko.github.io/vhdl/" data-hashtag="VHDL"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Hacker News" data-sharer="hackernews" data-url="https://minefujiko.github.io/vhdl/" data-title="VHDL学习笔记"><i class="fab fa-hacker-news fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://minefujiko.github.io/vhdl/" data-title="VHDL学习笔记"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@2.14.0/icons/line.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://minefujiko.github.io/vhdl/" data-title="VHDL学习笔记" data-ralateuid="xxxx"><i class="fab fa-weibo fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/vhdl/">VHDL</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/20220807_vcs/" class="prev" rel="prev" title="VCS学习笔记"><i class="fas fa-angle-left fa-fw"></i>VCS学习笔记</a></div>
+</div>
+<div id="comments"><div id="utterances"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/">Utterances</a>.
+            </noscript></div></article></div>
+            </main></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/algoliasearch@4.2.0/dist/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.4.0/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{"utterances":{"darkTheme":"github-dark","issueTerm":"pathname","label":"","lightTheme":"github-light","repo":"minefujiko/hugotalks"}},"search":{"algoliaAppID":"PASDMWALPK","algoliaIndex":"index.zh-cn","algoliaSearchKey":"b42948e51daaa93df92381c8e2ac0f93","highlightTag":"em","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"algolia"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>
