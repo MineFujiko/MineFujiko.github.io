@@ -3,9 +3,16 @@
         <title>NIC&#39;s Blog</title>
         <link>https://minefujiko.github.io/</link>
         <description>关于 LoveIt 主题</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Tue, 09 Aug 2022 00:05:38 &#43;0800</lastBuildDate>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sat, 20 Aug 2022 00:12:22 &#43;0800</lastBuildDate>
             <atom:link href="https://minefujiko.github.io/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>Vimium</title>
+    <link>https://minefujiko.github.io/20220820_vimium/</link>
+    <pubDate>Sat, 20 Aug 2022 00:12:22 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://minefujiko.github.io/20220820_vimium/</guid>
+    <description><![CDATA[Vimium是一款Chrome的插件，它继承了VIM的思路，让我们在使用Chrome时，无论是浏览网页、切换标签、搜索以及其他操作时，全都可]]></description>
+</item><item>
     <title>VHDL学习笔记</title>
     <link>https://minefujiko.github.io/vhdl/</link>
     <pubDate>Tue, 09 Aug 2022 00:05:38 &#43;0800</pubDate>

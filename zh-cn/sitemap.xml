@@ -2,7 +2,7 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>https://minefujiko.github.io/categories/</loc><lastmod>2022-08-09T00:05:38&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>https://minefujiko.github.io/categories/</loc><lastmod>2022-08-20T00:12:22&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
                         href="https://minefujiko.github.io/en/categories/"
@@ -15,9 +15,8 @@
                     hreflang="zh-cn"
                     href="https://minefujiko.github.io/categories/"
                     /></url><url>
-            <loc>https://minefujiko.github.io/categories/fpga/</loc><lastmod>2022-08-09T00:05:38&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://minefujiko.github.io/categories/ic/</loc><lastmod>2022-08-09T00:05:38&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://minefujiko.github.io/</loc><lastmod>2022-08-09T00:05:38&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>https://minefujiko.github.io/tags/chrome/</loc><lastmod>2022-08-20T00:12:22&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://minefujiko.github.io/</loc><lastmod>2022-08-20T00:12:22&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
                         href="https://minefujiko.github.io/en/"
@@ -30,8 +29,9 @@
                     hreflang="zh-cn"
                     href="https://minefujiko.github.io/"
                     /></url><url>
-            <loc>https://minefujiko.github.io/posts/</loc><lastmod>2022-08-09T00:05:38&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://minefujiko.github.io/tags/</loc><lastmod>2022-08-09T00:05:38&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>https://minefujiko.github.io/posts/</loc><lastmod>2022-08-20T00:12:22&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://minefujiko.github.io/categories/soft/</loc><lastmod>2022-08-20T00:12:22&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://minefujiko.github.io/tags/</loc><lastmod>2022-08-20T00:12:22&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
                         href="https://minefujiko.github.io/en/tags/"
@@ -44,15 +44,17 @@
                     hreflang="zh-cn"
                     href="https://minefujiko.github.io/tags/"
                     /></url><url>
-            <loc>https://minefujiko.github.io/tags/vhdl/</loc><lastmod>2022-08-09T00:05:38&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://minefujiko.github.io/vhdl/</loc><lastmod>2022-08-09T00:05:38&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://minefujiko.github.io/tags/vcs/</loc><lastmod>2022-08-07T22:57:22&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://minefujiko.github.io/20220807_vcs/</loc><lastmod>2022-08-07T22:57:22&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://minefujiko.github.io/tags/blog/</loc><lastmod>2022-08-07T22:29:38&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://minefujiko.github.io/tags/emacs/</loc><lastmod>2022-08-07T22:29:38&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://minefujiko.github.io/tags/hugo/</loc><lastmod>2022-08-07T22:29:38&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://minefujiko.github.io/20220807_hugo_publish/</loc><lastmod>2022-08-07T22:29:38&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://minefujiko.github.io/categories/soft/</loc><lastmod>2022-08-07T22:29:38&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://minefujiko.github.io/20220820_vimium/</loc><lastmod>2022-08-20T00:12:22&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://minefujiko.github.io/categories/fpga/</loc><lastmod>2022-08-09T00:05:38&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
+            <loc>https://minefujiko.github.io/categories/ic/</loc><lastmod>2022-08-09T00:05:38&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
+            <loc>https://minefujiko.github.io/tags/vhdl/</loc><lastmod>2022-08-09T00:05:38&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
+            <loc>https://minefujiko.github.io/vhdl/</loc><lastmod>2022-08-09T00:05:38&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
+            <loc>https://minefujiko.github.io/tags/vcs/</loc><lastmod>2022-08-07T22:57:22&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
+            <loc>https://minefujiko.github.io/20220807_vcs/</loc><lastmod>2022-08-07T22:57:22&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
+            <loc>https://minefujiko.github.io/tags/blog/</loc><lastmod>2022-08-07T22:29:38&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
+            <loc>https://minefujiko.github.io/tags/emacs/</loc><lastmod>2022-08-07T22:29:38&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
+            <loc>https://minefujiko.github.io/tags/hugo/</loc><lastmod>2022-08-07T22:29:38&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
+            <loc>https://minefujiko.github.io/20220807_hugo_publish/</loc><lastmod>2022-08-07T22:29:38&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
             <loc>https://minefujiko.github.io/tags/emcas/</loc><lastmod>2022-03-05T23:56:05&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://minefujiko.github.io/tags/org-mode/</loc><lastmod>2022-03-05T23:56:05&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://minefujiko.github.io/16_6_%E5%8A%A8%E6%80%81%E6%A0%87%E9%A2%98%E7%BC%96%E5%8F%B7/</loc><lastmod>2022-03-05T23:56:05&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
