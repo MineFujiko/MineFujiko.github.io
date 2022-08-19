@@ -29,7 +29,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/minefujiko.github.io\/20220807_hugo_publish\/"
-        },"image": ["https:\/\/minefujiko.github.io\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "emacs, hugo, blog","wordcount":  431 ,
+        },"image": ["https:\/\/minefujiko.github.io\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "emacs, hugo, blog","wordcount":  575 ,
         "url": "https:\/\/minefujiko.github.io\/20220807_hugo_publish\/","datePublished": "2022-08-07T22:29:38+08:00","dateModified": "2022-08-07T22:29:38+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
             "@type": "Organization",
             "name": "xxxx","logo": "https:\/\/minefujiko.github.io\/images\/avatar.png"},"author": {
@@ -110,8 +110,8 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">hugo发布流程</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Niechuan</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/soft/"><i class="far fa-folder fa-fw"></i>SOFT</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-08-07">2022-08-07</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 431 字&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 1 分钟&nbsp;</div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-08-07">2022-08-07</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 575 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 2 分钟&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
                     <span>目录</span>
@@ -132,6 +132,12 @@
 <li><a href="#headline-5">4.生成文件</a>
 </li>
 <li><a href="#headline-6">5.部署</a>
+</li>
+<li><a href="#headline-7">其他</a>
+<ul>
+<li><a href="#headline-8">图片插入</a>
+</li>
+</ul>
 </li>
 </ul>
 </nav></div>
@@ -245,6 +251,36 @@ categories: <span class="o">[</span>编辑器<span class="o">]</span>
 <div id="outline-text-headline-6" class="outline-text-3">
 <p>将 public/目录提交到github仓库即可。
 小技巧：在根目录下，新建.gitignore文件，添加<em>public</em>,可以使得/public自成一个仓库。</p>
+</div>
+</div>
+<div id="outline-container-headline-7" class="outline-3">
+<h3 id="headline-7">
+其他
+</h3>
+<div id="outline-text-headline-7" class="outline-text-3">
+<div id="outline-container-headline-8" class="outline-4">
+<h4 id="headline-8">
+图片插入
+</h4>
+<div id="outline-text-headline-8" class="outline-text-4">
+<p>Hugo的根目录下有一个static目录，这个目录是用来存放静态文件的，如：图片、css、js等文件。在部署时，hugo会把static目录下的文件复制到pulic目录下，且目录层级保持一致。</p>
+<div class="src src-shell">
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">!<span class="o">[</span>Vimium Help<span class="o">](</span>/images/20220820_vimium/vimium_help.jpg<span class="o">)</span></code></pre></td></tr></table>
+</div>
+</div>
+</div>
+<p>那么，图片放在 static/images/20220820_vimium/vimium_help.jpg
+hugo拷贝生成   public/images/20220820_vimium/vimium_help.jpg</p>
+<p>
+或者，使用LoveIt的shortcode
+<a href="https://hugoloveit.com/zh-cn/theme-documentation-extended-shortcodes/#image">https://hugoloveit.com/zh-cn/theme-documentation-extended-shortcodes/#image</a></p>
+</div>
+</div>
 </div>
 </div>
 </div><div class="post-footer" id="post-footer">

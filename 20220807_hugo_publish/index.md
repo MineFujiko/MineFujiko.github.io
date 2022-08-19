@@ -44,3 +44,15 @@ hugo server -D
 将 public/目录提交到github仓库即可。
 小技巧：在根目录下，新建.gitignore文件，添加/public/,可以使得/public自成一个仓库。
 
+** 其他
+*** 图片插入
+Hugo的根目录下有一个static目录，这个目录是用来存放静态文件的，如：图片、css、js等文件。在部署时，hugo会把static目录下的文件复制到pulic目录下，且目录层级保持一致。
+#+begin_src shell
+![Vimium Help](/images/20220820_vimium/vimium_help.jpg)
+#+end_src
+那么，图片放在 static/images/20220820_vimium/vimium_help.jpg
+hugo拷贝生成   public/images/20220820_vimium/vimium_help.jpg
+
+
+或者，使用LoveIt的shortcode
+https://hugoloveit.com/zh-cn/theme-documentation-extended-shortcodes/#image
