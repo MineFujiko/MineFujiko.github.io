@@ -53,6 +53,5 @@ Hugo的根目录下有一个static目录，这个目录是用来存放静态文�
 那么，图片放在 static/images/20220820_vimium/vimium_help.jpg
 hugo拷贝生成   public/images/20220820_vimium/vimium_help.jpg
 
-
 或者，使用LoveIt的shortcode
 https://hugoloveit.com/zh-cn/theme-documentation-extended-shortcodes/#image
