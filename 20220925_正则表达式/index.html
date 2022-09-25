@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>正则表达式 - NIC&#39;s Blog</title><meta name="Description" content="关于 LoveIt 主题"><meta property="og:title" content="正则表达式" />
+<meta property="og:description" content="正则表达式 功能 搜索 替换 总表 ![regexp_table](/images/20220925_regexp/regexp_table.png) 调试工具 在线测试器 问题在于，不同的语言有不同的版本。 目前，需要精通： python vscode regex101, 是学习正则表达式最有效的工具网站。 https://regex101.com/ 知" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://minefujiko.github.io/20220925_%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" /><meta property="og:image" content="https://minefujiko.github.io/logo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-09-25T23:08:14+08:00" />
+<meta property="article:modified_time" content="2022-09-25T23:08:14+08:00" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://minefujiko.github.io/logo.png"/>
+
+<meta name="twitter:title" content="正则表达式"/>
+<meta name="twitter:description" content="正则表达式 功能 搜索 替换 总表 ![regexp_table](/images/20220925_regexp/regexp_table.png) 调试工具 在线测试器 问题在于，不同的语言有不同的版本。 目前，需要精通： python vscode regex101, 是学习正则表达式最有效的工具网站。 https://regex101.com/ 知"/>
+<meta name="application-name" content="LoveIt">
+<meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://minefujiko.github.io/20220925_%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" /><link rel="prev" href="https://minefujiko.github.io/20220925_tools_for_productivity/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "正则表达式",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/minefujiko.github.io\/20220925_%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F\/"
+        },"image": ["https:\/\/minefujiko.github.io\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "regexp, productivity","wordcount":  996 ,
+        "url": "https:\/\/minefujiko.github.io\/20220925_%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F\/","datePublished": "2022-09-25T23:08:14+08:00","dateModified": "2022-09-25T23:08:14+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "xxxx","logo": "https:\/\/minefujiko.github.io\/images\/avatar.png"},"author": {
+                "@type": "Person",
+                "name": "Nic"
+            },"description": ""
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="NIC&#39;s Blog">NIC&#39;s blog</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 所有文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/categories/documentation/"> 文档 </a><a class="menu-item" href="/about/"> 关于 </a><a class="menu-item" href="https://github.com/dillonzq/LoveIt" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item language" title="选择语言">简体中文<i class="fas fa-chevron-right fa-fw"></i>
+                        <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/20220925_%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" selected>简体中文</option></select>
+                    </a><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="NIC&#39;s Blog">NIC&#39;s blog</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">所有文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/categories/documentation/" title="">文档</a><a class="menu-item" href="/about/" title="">关于</a><a class="menu-item" href="https://github.com/dillonzq/LoveIt" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a><a href="javascript:void(0);" class="menu-item" title="选择语言">简体中文<i class="fas fa-chevron-right fa-fw"></i>
+                    <select class="language-select" onchange="location = this.value;"><option value="/20220925_%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" selected>简体中文</option></select>
+                </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">正则表达式</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Nic</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/soft/"><i class="far fa-folder fa-fw"></i>SOFT</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-09-25">2022-09-25</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 996 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 2 分钟&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+<ul>
+<li><a href="#headline-1">正则表达式</a>
+<ul>
+<li><a href="#headline-2">功能</a>
+</li>
+<li><a href="#headline-3">调试工具</a>
+</li>
+<li><a href="#headline-4">知识点</a>
+<ul>
+<li><a href="#headline-5">匹配字符</a>
+<ul>
+<li><a href="#headline-6">匹配任意字符 .</a>
+</li>
+<li><a href="#headline-7">匹配特殊字符</a>
+</li>
+<li><a href="#headline-8">配置多个字符中的一个-[]</a>
+</li>
+<li><a href="#headline-9">匹配空白字符</a>
+</li>
+<li><a href="#headline-10">匹配特定字符</a>
+</li>
+</ul>
+</li>
+<li><a href="#headline-11">重复匹配</a>
+</li>
+<li><a href="#headline-12">位置匹配</a>
+<ul>
+<li><a href="#headline-13">分行模式(?m)</a>
+</li>
+</ul>
+</li>
+<li><a href="#headline-14">子表达式</a>
+</li>
+<li><a href="#headline-15">回溯、向前查找、条件表达式</a>
+</li>
+</ul>
+</li>
+<li><a href="#headline-16">参考</a>
+</li>
+</ul>
+</li>
+</ul>
+</nav></div>
+            </div><div class="content" id="content">
+<div id="outline-container-headline-1" class="outline-2">
+<h2 id="headline-1">
+正则表达式
+</h2>
+<div id="outline-text-headline-1" class="outline-text-2">
+<div id="outline-container-headline-2" class="outline-3">
+<h3 id="headline-2">
+功能
+</h3>
+<div id="outline-text-headline-2" class="outline-text-3">
+<p><strong><strong>搜索</strong></strong>
+<strong><strong>替换</strong></strong></p>
+<p>
+<strong><strong>总表</strong></strong>
+  ![regexp_table](/images/20220925_regexp/regexp_table.png)</p>
+</div>
+</div>
+<div id="outline-container-headline-3" class="outline-3">
+<h3 id="headline-3">
+调试工具
+</h3>
+<div id="outline-text-headline-3" class="outline-text-3">
+<p><strong><strong>在线测试器</strong></strong>
+  问题在于，不同的语言有不同的版本。
+  目前，需要精通：</p>
+<ul>
+<li>
+<p>python</p>
+</li>
+<li>
+<p>vscode</p>
+</li>
+</ul>
+<p>regex101, 是学习正则表达式最有效的工具网站。
+  <a href="https://regex101.com/">https://regex101.com/</a></p>
+</div>
+</div>
+<div id="outline-container-headline-4" class="outline-3">
+<h3 id="headline-4">
+知识点
+</h3>
+<div id="outline-text-headline-4" class="outline-text-3">
+<div id="outline-container-headline-5" class="outline-4">
+<h4 id="headline-5">
+匹配字符
+</h4>
+<div id="outline-text-headline-5" class="outline-text-4">
+<div id="outline-container-headline-6" class="outline-5">
+<h5 id="headline-6">
+匹配任意字符 .
+</h5>
+<div id="outline-text-headline-6" class="outline-text-5">
+<p><strong><strong>.</strong></strong>
+可以匹配任意单个字符，除了行结束符。
+注意，这个在不同流派中是不一样的：</p>
+<ul>
+<li>
+<p>ECMAScript(JavaScript)，行结束符为\n,\r</p>
+</li>
+<li>
+<p>Python，行结束符为\n</p>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-headline-7" class="outline-5">
+<h5 id="headline-7">
+匹配特殊字符
+</h5>
+<div id="outline-text-headline-7" class="outline-text-5">
+<p><strong><strong>元字符(Metacharacter)</strong></strong>
+  元字符，表示这个字符有特殊含义，而不是字符本身。
+  \,是一个元字符，表示对其后的字符进行转义。
+  \s,是一个元字符，表示空白字符。</p>
+</div>
+</div>
+<div id="outline-container-headline-8" class="outline-5">
+<h5 id="headline-8">
+配置多个字符中的一个-[]
+</h5>
+<div id="outline-text-headline-8" class="outline-text-5">
+<p>使用元字符[和]，来定义一个字符集合。[和]不匹配任何字符，[]仅匹配一个字符，即只占一个位置。配置的字符为这个集合中的任意一个。
+示例：
+[ns]，表示匹配n或者匹配s。</p>
+<p>
+<strong><strong>特殊的集合</strong></strong></p>
+<table>
+<thead>
+</thead>
+<tbody>
+<tr>
+<td>[0-9]</td>
+<td class="align-right"></td>
+<td class="align-right"></td>
+</tr>
+<tr>
+<td>[a-z]</td>
+<td class="align-right"></td>
+<td class="align-right"></td>
+</tr>
+<tr>
+<td>[A-Z]</td>
+<td class="align-right"></td>
+<td class="align-right"></td>
+</tr>
+<tr>
+<td>[A-z]</td>
+<td class="align-right"></td>
+<td class="align-right"></td>
+</tr>
+<tr>
+<td>[A-Za-z0-9]</td>
+<td class="align-right"></td>
+<td class="align-right"></td>
+</tr>
+</tbody>
+</table>
+<p>
+<strong><strong>集合取非</strong></strong>
+用元字符^, 表示对一个字符集合进行取非。
+注意：^仅在集合中表示取非，单独使用时，可表示匹配字符串开头。</p>
+</div>
+</div>
+<div id="outline-container-headline-9" class="outline-5">
+<h5 id="headline-9">
+匹配空白字符
+</h5>
+<div id="outline-text-headline-9" class="outline-text-5">
+<table>
+<thead>
+</thead>
+<tbody>
+<tr>
+<td>[\b]</td>
+<td>回退</td>
+<td>为什么带[]?</td>
+</tr>
+<tr>
+<td>\f</td>
+<td>换页符</td>
+<td></td>
+</tr>
+<tr>
+<td>\n</td>
+<td>换行符</td>
+<td></td>
+</tr>
+<tr>
+<td>\r</td>
+<td>回车符</td>
+<td></td>
+</tr>
+<tr>
+<td>\t</td>
+<td>制表符</td>
+<td>Tab键</td>
+</tr>
+<tr>
+<td>\v</td>
+<td>垂直制表符</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>
+<strong><strong>组合使用</strong></strong>
+windows中，使用\r\n匹配“回车+换行”，把这个用作文本行的结束。
+匹配空白行：</p>
+<ul>
+<li>
+<p>windows, \r\n\r\n</p>
+</li>
+<li>
+<p>linux, \n\n</p>
+</li>
+<li>
+<p>mac, \r\r</p>
+</li>
+</ul>
+<p>Fun:
+回车和换行的区别：<a href="https://baijiahao.baidu.com/s?id=1732246005673869826&amp;wfr=spider&amp;for=pc">https://baijiahao.baidu.com/s?id=1732246005673869826&amp;wfr=spider&amp;for=pc</a></p>
+</div>
+</div>
+<div id="outline-container-headline-10" class="outline-5">
+<h5 id="headline-10">
+匹配特定字符
+</h5>
+<div id="outline-text-headline-10" class="outline-text-5">
+<table>
+<thead>
+</thead>
+<tbody>
+<tr>
+<td>\d</td>
+<td>任何一个数字</td>
+<td>[0-9]</td>
+</tr>
+<tr>
+<td>\D</td>
+<td>任何一个非数字</td>
+<td>[^0-9]</td>
+</tr>
+<tr>
+<td>\w</td>
+<td>任何一个字母(大小写均可)/数字/下划线</td>
+<td>[a-zA-Z0-9_]</td>
+</tr>
+<tr>
+<td>\W</td>
+<td>\w取反</td>
+<td>[^a-zA-Z0-9_]</td>
+</tr>
+<tr>
+<td>\s</td>
+<td>任何空白字符</td>
+<td>[\f\n\r\t\v]</td>
+</tr>
+<tr>
+<td>§</td>
+<td>任何非空白字符</td>
+<td>[^\f\n\r\t\v]</td>
+</tr>
+<tr>
+<td>\x</td>
+<td>匹配十六进制</td>
+<td></td>
+</tr>
+<tr>
+<td>\0</td>
+<td>匹配八进制</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-headline-11" class="outline-4">
+<h4 id="headline-11">
+重复匹配
+</h4>
+<div id="outline-text-headline-11" class="outline-text-4">
+<table>
+<thead>
+</thead>
+<tbody>
+<tr>
+<td>+</td>
+<td>一个或多个</td>
+<td class="align-right"></td>
+</tr>
+<tr>
+<td>*</td>
+<td>零个或多个</td>
+<td class="align-right"></td>
+</tr>
+<tr>
+<td>?</td>
+<td>零个或一个</td>
+<td class="align-right"></td>
+</tr>
+<tr>
+<td>{N}</td>
+<td>匹配N次</td>
+<td class="align-right"></td>
+</tr>
+<tr>
+<td>{N,M}</td>
+<td>匹配N到M次</td>
+<td class="align-right"></td>
+</tr>
+<tr>
+<td>{N,}</td>
+<td>匹配至少N次</td>
+<td class="align-right"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="outline-container-headline-12" class="outline-4">
+<h4 id="headline-12">
+位置匹配
+</h4>
+<div id="outline-text-headline-12" class="outline-text-4">
+<table>
+<thead>
+</thead>
+<tbody>
+<tr>
+<td>\b</td>
+<td>单词开头或者结尾</td>
+<td class="align-right"></td>
+</tr>
+<tr>
+<td>\B</td>
+<td>\b取反，不匹配边界</td>
+<td class="align-right"></td>
+</tr>
+<tr>
+<td>^</td>
+<td>字符串开头</td>
+<td class="align-right"></td>
+</tr>
+<tr>
+<td>$</td>
+<td>字符串结尾</td>
+<td class="align-right"></td>
+</tr>
+<tr>
+<td>(?m)</td>
+<td>分行模式</td>
+<td class="align-right"></td>
+</tr>
+</tbody>
+</table>
+<div id="outline-container-headline-13" class="outline-5">
+<h5 id="headline-13">
+分行模式(?m)
+</h5>
+<div id="outline-text-headline-13" class="outline-text-5">
+<p>在分行匹配模式下，^不仅匹配正常的字符串开头，还将匹配行分隔符（换行符）后面的开始位置；$不仅匹配正常的字符串结尾，还将匹配行分隔符（换行符）后面的结束位置。
+注：有很多正则表达式，不支持(?m)</p>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-headline-14" class="outline-4">
+<h4 id="headline-14">
+子表达式
+</h4>
+<div id="outline-text-headline-14" class="outline-text-4">
+<p>元字符(和), 表示子表达式。
+注意：替换时符号不同:</p>
+<ul>
+<li>
+<p>python, \1</p>
+</li>
+<li>
+<p>javascript, $1</p>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-headline-15" class="outline-4">
+<h4 id="headline-15">
+回溯、向前查找、条件表达式
+</h4>
+</div>
+</div>
+</div>
+<div id="outline-container-headline-16" class="outline-3">
+<h3 id="headline-16">
+参考
+</h3>
+<div id="outline-text-headline-16" class="outline-text-3">
+<p>本来想参考官方介绍，但是始终没有找到，只找到了Virutal Studio的说明。
+<a href="https://learn.microsoft.com/en-us/dotnet/standard/base-types/regular-expression-language-quick-reference">https://learn.microsoft.com/en-us/dotnet/standard/base-types/regular-expression-language-quick-reference</a>
+<a href="https://learn.microsoft.com/en-us/dotnet/standard/base-types/regular-expressions">https://learn.microsoft.com/en-us/dotnet/standard/base-types/regular-expressions</a></p>
+<p>
+在VSCODE的task doc中</p>
+<blockquote>
+<p>Tip: We have found the RegEx101 playground, which has an ECMAScript (JavaScript) flavor, to be a great way to develop and test regular expressions.</p>
+</blockquote>
+</div>
+</div>
+</div>
+</div>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2022-09-25</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/20220925_%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/index.md" target="_blank">阅读原始文档</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://minefujiko.github.io/20220925_%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" data-title="正则表达式" data-hashtags="regexp,productivity"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://minefujiko.github.io/20220925_%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" data-hashtag="regexp"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Hacker News" data-sharer="hackernews" data-url="https://minefujiko.github.io/20220925_%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" data-title="正则表达式"><i class="fab fa-hacker-news fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://minefujiko.github.io/20220925_%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" data-title="正则表达式"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@2.14.0/icons/line.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://minefujiko.github.io/20220925_%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" data-title="正则表达式" data-ralateuid="xxxx"><i class="fab fa-weibo fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/regexp/">regexp</a>,&nbsp;<a href="/tags/productivity/">productivity</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/20220925_tools_for_productivity/" class="prev" rel="prev" title="生产力工具"><i class="fas fa-angle-left fa-fw"></i>生产力工具</a></div>
+</div>
+<div id="comments"><div id="utterances"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/">Utterances</a>.
+            </noscript></div></article></div>
+            </main></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/algoliasearch@4.2.0/dist/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.4.0/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{"utterances":{"darkTheme":"github-dark","issueTerm":"pathname","label":"","lightTheme":"github-light","repo":"minefujiko/hugotalks"}},"search":{"algoliaAppID":"PASDMWALPK","algoliaIndex":"index.zh-cn","algoliaSearchKey":"b42948e51daaa93df92381c8e2ac0f93","highlightTag":"em","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"algolia"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>
